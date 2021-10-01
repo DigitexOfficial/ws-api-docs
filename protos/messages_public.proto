@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-// version: 142
-// last_field_id: 352
+// version: 139
+// last_field_id: 347
 
 package digitex_wire;
 
-option java_package = "com.smartdec.digitex";
+option java_package = "com.digitexfutures";
 
 // Defines the type of a Message
 enum MessageType
@@ -18,8 +18,6 @@ enum MessageType
   ORDER_STATUS = 517;  // Placed order information (PLACE_ORDER message response)
   ORDER_FILLED = 518;  // Matched order information
   CHANGE_LEVERAGE_ALL = 519;  // Leverage changing for all contract (for exact market)
-  EXCHANGE_RATE_UPDATE = 520;  // Exchange rate request (Service message)
-  TRADER_BALANCE_UPDATE = 521;  // User balance request (for trading (NOT main balance)) - Service message
   TRADER_BALANCE = 522;  // Trading balance information (TRADER_BALANCE_UPDATE message response)
   POSITION_EVENT = 523;  // New information about a position when a position has been changed
   LEVERAGE = 524;  // New information about a leverage when a leverage has been changed (CHANGE_LEVERAGE & CHANGE_LEVERAGE_ALL message response)
@@ -32,7 +30,6 @@ enum MessageType
   UPDATE_ORDER = 531;  // Quantity changing request in the order
   GET_TRADER_STATUS = 532;  // Trader status request
   TRADER_STATUS = 533;  // Request for overall information about the trader (GET_TRADER_STATUS message response)
-  CONTROL = 534;  // ControlCommand Service message 
   FUNDING = 535;  // Funding information message (when Funding happened)
   OHLCV_LIST = 536;  // Candles information for a trading view
   TRADE_LIST = 537;  // DEPRECATED
@@ -42,10 +39,7 @@ enum MessageType
   UPDATE_ALL_CONRACTS = 541;  // NOT IMPLEMENTED
   CLOSE_CONTRACT = 542;  // Closing a specific contract
   CLOSE_ALL_CONTRACTS = 543;  // Closing all contracts (for one market)
-  UPDATE_TRADER_SETTINGS = 544;  // Update user preferences - Service message
-  TRADER_SETTINGS = 545;  // Information on settings for a trader - Service message (UPDATE_TRADER_SETTINGS message response)
   ORDER_CANCELED = 546;  // Specific order cancelation (CANCEL_ORDER & CANCEL_ALL_ORDERS message response)
-  ENGINE_STATUS = 547;  // Engine status
   GET_MARKET_STATE = 548;  // Request for information on the market
   MARKET_STATE = 549;  // Market information (response for the GET_MARKET_STATE message)
   GET_EXCHANGE_RATES = 550;  // Rate request
@@ -53,17 +47,8 @@ enum MessageType
   MARKET_STATE_UPDATE = 552;  // Updated information on the market
   CONTRACT_CLOSED = 553;  // Contract closure information (CLOSE_CONTRACT & CLOSE_ALL_CONTRACTS message response)
   CONTRACT_TRANSFERRED = 554;  // Contracts that have been transferred to the system trader (in a liquidation or settlement situation)
-  START_RUN = 555;  // DEPRECATED
-  RUN_STARTED = 556;  // DEPRECATED
-  FINISH_RUN = 557;  // DEPRECATED
-  RUN_FINISHED = 558;  // DEPRECATED
-  UPDATE_CONTEST_TRADER_SETTINGS = 559;  // DEPRECATED (Service message)
-  CONTEST_TRADER_SETTINGS = 560;  // DEPRECATED (Service message)
-  CONTROL_RESULT = 561;  // ControlCommand Service message response (CONTROL message response)
   GET_TRADER_BALANCE = 562;  // Trader Balance request
-  UPDATE_TRADER_BALANCE = 563;  // the same as TRADER_BALANCE_UPDATE - it is better to delete
   TRADER_BALANCE_UPDATED = 564;  // Updated information about Trader Balance (UPDATE_TRADER_BALANCE message response)
-  INTERNAL_MARKET_STATE_UPDATE = 565;  // Updated information about the internal market state - Service message
   PLACE_DELAYED_ACTION = 566;  // Create a pending order
   UPDATE_DELAYED_ACTION = 567;  // Update pending order parameters
   CANCEL_DELAYED_ACTION = 568;  // Cancel a pending order
@@ -72,7 +57,6 @@ enum MessageType
   FUNDING_INFO = 571;  // General information about funding
   ERROR = 572;  // Error information - Service message
   MARKET_TRADER_STATISTICS = 573;  // Market trader statistics
-  EXCHANGE_RATES_UPDATE = 574;  // Update information on rates - Service message
 };
 
 // Defines the type of value 
@@ -107,11 +91,11 @@ enum OrderType
 enum OrderDuration
 {
   DURATION_UNDEFINED = 0; // Duration is not defined
-  GFD = 1;  // Good for the day - orders are canceled automatically at 00:00:00 UTC of the next day.
-  GTC = 2;  // Good till cancelled - orders are remained active until it is either executed or until the trader cancels it.
-  GTF = 3;  // Good till funding - orders are canceled automatically at the next funding (i.e 00:00:00, 08:00:00, 16:00:00 UTC).
-  IOC = 4;  // Immediate or cancel - orders are executed immediately. If the order cannot be partially filled, it is canceled. If the order cannot be fully filled, the remainder is canceled.
-  FOK = 5;  // Fill or kill - orders are executed immediately. If the order cannot be fully filled immediately, it is canceled.
+  GFD = 1;  // good for the day
+  GTC = 2;  // good till cancel
+  GTF = 3;  // good till funding
+  IOC = 4;  // immediate or cancel
+  FOK = 5;  // fill or kill
 }
 
 // Defines the status of an Order
@@ -143,6 +127,7 @@ enum DelayedActionType
   DA_UNDEFINED = 0; // Delayed action type is not defined
   DA_ORDER = 1; // Delayed order has been placed 
 }
+
 
 // Defines the variable of condition for delayed action 
 enum DelayedTriggerVariable
@@ -192,7 +177,6 @@ enum ControlCommand
   HTTP_POST = 26;               // generic request, requires value_code
   DUMP_MARKET_TRADER_STATES = 27;
   MINUTE_RANDOM_TIME = 28;
-  CLEAR_LAST_TRADE = 29;
 }
 
 // Defines the type of funding
@@ -203,7 +187,6 @@ enum FundingType
   FUNDING_LIQUIDITY_REWARD = 2; // Rewards to miners in scope of the liquidity mining 
 }
 
-// Defines the numbers type used for transferring to Protobuf
 message Decimal
 {
   int64 value64 = 36; // 64-bit signed integer value type.
@@ -213,7 +196,7 @@ message Decimal
   uint32 scale = 37; // The number of digits after the decimal point.
 }
 
-// Defines the order properties during order placement 
+// Defines the numbers type used for transferring to Protobuf
 message PlaceOrderMessage
 {
   OrderType order_type = 32;  // Order type
@@ -223,7 +206,6 @@ message PlaceOrderMessage
   Decimal price = 38; // Order price
   Decimal quantity = 39; // Quantity of the Order
   int32 is_closing = 280; // Reduce Only flag 
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue 
 }
 
 // Defines the order properties during order updating (no UI elements for doing this action by a trader)
@@ -236,7 +218,6 @@ message UpdateOrderMessage
   OrderDuration duration = 35; // Order duration (e.g. GFD, GTC)
   Decimal price = 38; // Order price
   Decimal quantity = 39; // Quantity of contracts 
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
 }
 
 // Defines the order properties during order cancelation
@@ -311,7 +292,6 @@ message OrderStatusMessage
   Decimal orig_quantity = 206; // Used when Orded partialy matched, orig_quantity defines the quantity of the initial Order in a chain
 
   bytes orig_order_id = 327;    // from v129: the auto-generated order_id of the first order in chain
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
 }
 
 // Defines the Leverage size (per trader)
@@ -424,28 +404,9 @@ message OrderFilledMessage
   Decimal full_position_margin = 298; // Sum of Position Margin under all markets
   Decimal full_buy_order_margin = 299; // Sum of Buy Orders Margin under all markets
   Decimal full_sell_order_margin = 300; // Sum of Sell Orders Margin under all markets
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
 
   repeated TradeMessage trades = 46; // Array of the Open Contracts 
   repeated TradeMessage raw_trades = 82; // Array of new contracts created after matching the Order 
-}
-
-// System message, indicates exchange rates on other trades for the particular currency pair 
-message ExchangeRateUpdateMessage
-{
-  uint32 currency_pair_id = 47; // Currency pair id 
-  Decimal volume = 48; // Quantity under the new base price
-  Decimal quantity = 39; // Quantity under the new quote price
-  int32 unreliable = 209; // Flag indicates source (external market) credibility 
-  int32 source_count = 301; // The amount of sources (external markets) 
-  bytes price_updater_id = 302; // ID of price updater (for now we have only one own price updater)
-}
-
-// System message, indicates exchange rates on other trades
-message ExchangeRatesUpdateMessage
-{
-  repeated ExchangeRatesUpdateMessage rates = 341; // Array of exchange rates on other trades
-  bytes price_updater_id = 302; //  ID of price updater (for now we have only one own price updater)
 }
 
 // System message, indicates exchange rates on other trades per particular currency pair 
@@ -503,8 +464,8 @@ message PositionEventMessage
   repeated OrderMessage orders = 70;         // liquidated orders
 
   // the order parameters are reported
-  repeated OrderMessage stop_loss_contracts = 84; // Not used, deprecated
-  repeated OrderMessage take_profit_contracts = 85; // Not used, deprecated
+  //repeated OrderMessage stop_loss_contracts = 84;
+  //repeated OrderMessage take_profit_contracts = 85;
 
   Decimal trader_balance = 51; // Balance of the trading account (Bal)
   Decimal order_margin = 76; // Order margin
@@ -545,7 +506,6 @@ message OrderBookEntryMessage
   Decimal price = 38; // Order Price
   Decimal quantity = 39; // Quantity of the Orders by the particular price  
   int64 entry_timestamp = 155; // Not used, defines time when Order was placed to the Order Book
-  uint64 trade_id = 352;
 }
 
 // Defines Order Book info refarding recent trades on the market 
@@ -554,7 +514,6 @@ message OrderBookTradeEntryMessage
   Decimal price = 38; // Order Price
   Decimal quantity = 39; // Quantity of the Orders by the particular price 
   int64 entry_timestamp = 155; // Not used, defines time when Order was placed to the Order Book
-  uint64 trade_id = 352;
   OrderSide side = 33; // Taker side
 }
 
@@ -627,7 +586,6 @@ message OrderMessage
   int32 may_increase = 293; // Flag defines that Order may increase a position
 
   bytes orig_order_id = 327;    // from v129: the auto-generated order_id of the first order in chain
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
 }
 
 // Defines Trader Status info, response to GetTraderStatusMessage, UpdateContractMessage, UpdateAllContractsMessage?
@@ -660,39 +618,6 @@ message TraderStatusMessage
   Decimal full_position_margin = 298; // Sum of Position Margin under all markets
   Decimal full_buy_order_margin = 299; // Sum of Buy Orders Margin under all markets
   Decimal full_sell_order_margin = 300; // Sum of Sell Orders Margin under all markets
-}
-
-// System message, TBU
-message ControlMessage
-{
-  ControlCommand control_command = 80;
-  uint32 other_trader_id = 112;
-  Decimal funding_rate = 128; // Funding rate indicates which positions should pay to traders with the opposite positions at the Funding event
-  Decimal last_trade_price = 113; // Last Trade Price (LTP)
-  uint32 value_code = 186;
-  uint32 value_type = 193;
-  // generic values
-  uint64 value_uint64 = 187; // Generic value
-  int64 value_int64 = 188; // Generic value
-  Decimal value_decimal = 189; // Generic value
-  double value_double = 190; // Generic value
-  string value_string = 191; // Generic value
-  bytes value_bytes = 192; // Generic value
-}
-
-// System message, TBU
-message ControlResultMessage
-{
-  ControlCommand control_command = 80;
-  uint32 value_code = 186;
-  uint32 value_type = 193;
-
-  uint64 value_uint64 = 187; // Generic value
-  int64 value_int64 = 188; // Generic value
-  Decimal value_decimal = 189; // Generic value
-  double value_double = 190; // Generic value
-  string value_string = 191; // Generic value
-  bytes value_bytes = 192; // Generic value
 }
 
 // Message received after Funding event 
@@ -792,7 +717,6 @@ message CloseContractMessage
   OrderType order_type = 32; // Order type
   Decimal price = 38; // Contract Price
   Decimal quantity = 39; // Defines how much of a contract should be closed
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
 }
 
 // Request to close all Contracts
@@ -800,20 +724,6 @@ message CloseAllContractsMessage
 {
   OrderType order_type = 32;  // Order type
   Decimal price = 38; // Contract Price
-  uint32 order_flags = 348; // Not used, May be used for defining the order position in a queue
-}
-
-// System message
-message UpdateTraderSettingsMessage
-{
-  uint32 update_mask = 77;
-  sint32 rate_limit_sec_increment = 99; // Changes in quantity of messages a user can send per a second
-}
-
-// System message
-message TraderSettingsMessage
-{
-  int32 rate_limit_sec = 100; // Quantity of messages a user can send per a second
 }
 
 // Defines info refarding Canceled Order, response to CancelOrderMessage 
@@ -967,95 +877,6 @@ message MarketStateUpdateMessage
 
   Decimal open_interest = 295;
   Decimal insurance_fund = 297;
-
-  bool trading_suspended = 349;
-  int64 next_resume_time = 350;
-  int64 next_suspend_time = 351;
-}
-
-// System message, TBU
-message InternalMarketStateUpdateMessage
-{
-  int64 event_timestamp = 122;
-  string market_name = 250;
-  string health = 251;
-  repeated OHLCVMessage ohlcvs = 91; // Array of the time frame lengths 
-  Decimal last_trade_price = 113; // Last Trade Price (LTP)
-  Decimal last_trade_quantity = 116; // Last Trade Quantity (on the ladder or Recent Trades (Amount column))
-  int64 last_trade_timestamp = 296; // Time of the last Trade
-  repeated DailyStatisticsMessage daily_stats = 123; // Array of Market states, includes info the last and current day 
-  int64 funding_time = 127; // Remaining time until the next funding event
-  Decimal funding_rate = 128; // Funding rate indicates which positions should pay to traders with the opposite positions at the Funding event
-  Decimal next_funding_rate = 129; //Funding rate for the next period 
-  int64 funding_interval = 162; // Funding period indicates how often Funding event happen (every 8 hours for now) 
-  Decimal spot_price = 139; // Spot Price 
-  Decimal payout_per_contract = 102; // Payout per Contract
-  Decimal next_payout_per_contract = 144;
-  int64 alert_timestamp = 210;
-  string alert_text = 211;
-  int64 engine_start_timestamp = 214;
-  int32 trading_suspended = 108;
-  int32 funding_suspended = 109;
-  int32 withdrawals_suspended = 110;
-  int32 closed = 111;
-  int32 operations_suspended = 215;
-  int32 liquidations_suspended = 216;
-  int32 check_engine = 217;
-  Decimal min_allowed_spot_price = 218;
-  Decimal max_allowed_spot_price = 219;
-  Decimal total_buy_order_quantity = 220;
-  Decimal total_sell_order_quantity = 221;
-  Decimal total_buy_order_volume = 222;
-  Decimal total_sell_order_volume = 223;
-  Decimal total_buy_order_margin = 224;
-  Decimal total_sell_order_margin = 225;
-  uint32 order_trader_count = 226;
-  uint32 order_count = 227;
-  Decimal total_long_quantity = 228;
-  Decimal total_short_quantity = 229;
-  Decimal total_long_entry_volume = 230;
-  Decimal total_short_entry_volume = 231;
-  Decimal total_long_paid_volume = 232;
-  Decimal total_short_paid_volume = 233;
-  Decimal total_long_funding_paid_volume = 234;
-  Decimal total_short_funding_paid_volume = 235;
-  Decimal total_long_margin = 236;
-  Decimal total_short_margin = 237;
-  Decimal trader1_quantity = 238;
-  Decimal trader2_quantity = 239;
-  Decimal trader1_entry_volume = 240;
-  Decimal trader2_entry_volume = 241;
-  Decimal trader1_funding_paid_volume = 242;
-  Decimal trader2_funding_paid_volume = 243;
-  uint32 trade_trader_count = 244;
-  uint32 trade_count = 245;
-  Decimal total_balance = 246;
-  Decimal trader1_balance = 247;
-  Decimal trader2_balance = 248;
-  uint32 balance_trader_count = 249;
-  uint32 trade_count_last_min = 256;
-  Decimal trade_quantity_last_min = 252;
-  Decimal trade_volume_last_min = 253;
-  Decimal profit_last_min = 254;
-  Decimal loss_last_min = 255;
-  uint32 liquidation_count_last_min = 257;
-  Decimal liquidation_quantity_last_min = 258;
-  Decimal liquidation_volume_last_min = 259;
-  Decimal liquidation_paid_volume_last_min = 265;
-  Decimal liquidation_funding_paid_volume_last_min = 266;
-  Decimal liquidation_margin_last_min = 267;
-  uint64 in_messages_last_min = 260;
-  uint64 trade_messages_last_min = 261;
-  uint32 near_liquidation_count = 262;
-  Decimal near_liquidation_quantity = 263;
-  Decimal near_liquidation_volume = 264;
-  Decimal insurance_fund_loss_ratio = 268;
-  uint32 active_trader_count_last_min = 342;
-  uint32 active_trader_count_last_5m = 343;
-  uint32 active_trader_count_last_1h = 344;
-  uint32 active_trader_count_last_1d = 345;
-  bool liquidity_reward_enabled = 346;
-  Decimal liquidity_reward_per_min = 347;
 }
 
 // Request for getting info regarding rate of all currency pairs exchange
@@ -1094,84 +915,10 @@ message ContractTransferredMessage
   bytes new_client_id = 44; // Order ID of the new Order 
 }
 
-// DEPRECATED
-// to engine
-message StartRunMessage
-{
-  uint32 new_trader_id = 169;        // mandatory, must not be used before
-  int64 start_timestamp = 124;       // optional, the engine sets the start_timestamp to the current time
-  int64 run_duration = 170;          // mandatory, microseconds
-  uint32 run_id = 179;               // optional, saved by the engine
-  uint32 tournament_id = 180;        // optional, saved by the engine
-  Decimal initial_balance = 171;     // mandatory
-  uint32 max_leverage = 172;         // optional, the default value (100) if not specified
-  Decimal max_position = 173;        // optional, the default value if not specified
-  int32 enable_transfer = 174;       // optional, false by default, which blocks transfers to/from trading account
-  int32 enable_main_trading = 175;   // optional, false by default, which disables switching to/from the main trader_id
-  int32 rate_limit_sec = 100;        // optional, Quantity of messages a user can send per a second
-  uint32 leverage = 34;              // optional, the initial leverage
-}
-
-// DEPRECATED
-// from engine
-message RunStartedMessage
-{
-  uint32 new_trader_id = 169;
-  uint32 run_id = 179;
-  uint32 tournament_id = 180;
-  int64 start_timestamp = 124;
-  int64 run_duration = 170;
-}
-
-// DEPRECATED
-// to engine
-message FinishRunMessage
-{
-}
-
-// DEPRECATED
-// from engine
-message RunFinishedMessage
-{
-  uint32 orig_trader_id = 177;
-  uint32 run_id = 179;
-  uint32 tournament_id = 180;
-  int64 start_timestamp = 124;
-  int64 finish_timestamp = 178;
-  Decimal pnl = 154;  // Current profit and loss
-  Decimal accum_quantity = 181; // The amount of orders placed by a trader for the last 8 hours (period between funding events)
-}
-
-// DEPRECATED
-// to engine
-message UpdateContestTraderSettingsMessage
-{
-  uint32 update_mask = 77;
-  sint32 max_leverage_increment = 184;
-  Decimal max_position_increment = 185;
-}
-
-// DEPRECATED
-// from engine
-message ContestTraderSettingsMessage
-{
-  uint32 max_leverage = 172;
-  Decimal max_position = 173;
-}
-
 // Request to engine in order to receive Trader Balance 
 message GetTraderBalanceMessage
 {
   uint32 currency_id = 49; // Currancy ID
-}
-
-// Request to engine in order to update Trader Balance (System message) 
-message UpdateTraderBalanceMessage
-{
-  uint32 currency_id = 49; // Currancy ID
-  Decimal increment = 50; // Trader’s balance increasing in currency_id
-  uint32 seed = 212;
-  bytes signature = 213;  // Signature from /user/sign_request
 }
 
 // Defines the new trader balance, response to UpdateTraderBalanceMessage (System message)
@@ -1250,12 +997,12 @@ message FundingInfoMessage
   Decimal open_interest = 295;
 }
 
-// Defines the error code
 // minimal message to return the error code
 message ErrorMessage
 {
 }
 
+// Trader statistics
 message MarketTraderStatisticsMessage
 {
   int64 event_timestamp = 122; // Time of receiving the market state, in other words event (one per minute)
@@ -1339,7 +1086,7 @@ message Message
   uint32 error_code = 43;  // Error code
   int64 session_id = 8;  // Session ID (Not Used)
   bytes auth = 9;  // User signature to send message (Not Used)
-  
+
   // Fields are filled in depending on the msg_type value (if msg_type = MessageType.PLACE_ORDER (513), then PlaceOrderMessage field is filled, others are undefined)
   oneof kontent // Fields are filled in depending on the msg_type value (if msg_type = MessageType.PLACE_ORDER (513), then PlaceOrderMessage field is filled, others are undefined)
   {
@@ -1350,8 +1097,6 @@ message Message
     OrderStatusMessage order_status_msg = 517;
     OrderFilledMessage order_filled_msg = 518;
     ChangeLeverageAllMessage change_leverage_all_msg = 519;
-    ExchangeRateUpdateMessage exchange_rate_update_msg = 520;
-    TraderBalanceUpdateMessage trader_balance_update_msg = 521;
     TraderBalanceMessage trader_balance_msg = 522;
     PositionEventMessage position_event_msg = 523;
     LeverageMessage leverage_msg = 524;
@@ -1364,7 +1109,6 @@ message Message
     UpdateOrderMessage update_order_msg = 531;
     GetTraderStatusMessage get_trader_status_msg = 532;
     TraderStatusMessage trader_status_msg = 533;
-    ControlMessage control_msg = 534;
     FundingMessage funding_msg = 535;
     OHLCVListMessage ohlcv_list_msg = 536;
     TradeListMessage trade_list_msg = 537;
@@ -1374,10 +1118,7 @@ message Message
     UpdateAllContractsMessage update_all_contracts_msg = 541;
     CloseContractMessage close_contract_msg = 542;
     CloseAllContractsMessage close_all_contracts_msg = 543;
-    UpdateTraderSettingsMessage update_trader_settings_msg = 544;
-    TraderSettingsMessage trader_settings_msg = 545;
     OrderCanceledMessage order_canceled_msg = 546;
-    EngineStatusMessage engine_status_msg = 547;
     GetMarketStateMessage get_market_state_msg = 548;
     MarketStateMessage market_state_msg = 549;
     GetExchangeRatesMessage get_exchange_rates_msg = 550;
@@ -1385,17 +1126,8 @@ message Message
     MarketStateUpdateMessage market_state_update_msg = 552;
     ContractClosedMessage contract_closed_msg = 553;
     ContractTransferredMessage contract_transferred_msg = 554;
-    StartRunMessage start_run_msg = 555;
-    RunStartedMessage run_started_msg = 556;
-    FinishRunMessage finish_run_msg = 557;
-    RunFinishedMessage run_finished_msg = 558;
-    UpdateContestTraderSettingsMessage update_contest_trader_settings_msg = 559;
-    ContestTraderSettingsMessage contest_trader_settings_msg = 560;
-    ControlResultMessage control_result_msg = 561;
     GetTraderBalanceMessage get_trader_balance_msg = 562;
-    UpdateTraderBalanceMessage update_trader_balance_msg = 563;
     TraderBalanceUpdatedMessage trader_balance_updated_msg = 564;
-    InternalMarketStateUpdateMessage internal_market_state_update_msg = 565;
     PlaceDelayedActionMessage place_delayed_action_msg = 566;
     UpdateDelayedActionMessage update_delayed_action_msg = 567;
     CancelDelayedActionMessage cancel_delayed_action_msg = 568;
@@ -1404,6 +1136,5 @@ message Message
     FundingInfoMessage funding_info_msg = 571;
     ErrorMessage error_msg = 572;  // Error message
     MarketTraderStatisticsMessage market_trader_statistics_msg = 573;
-    ExchangeRatesUpdateMessage exchange_rates_update_msg = 574;
   }
 }

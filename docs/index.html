@@ -175,7 +175,7 @@
         
           
           <li>
-            <a href="#trading_api.proto">trading_api.proto</a>
+            <a href="#messages_public.proto">messages_public.proto</a>
             <ul>
               
                 <li>
@@ -207,23 +207,11 @@
                 </li>
               
                 <li>
-                  <a href="#digitex_wire.ContestTraderSettingsMessage"><span class="badge">M</span>ContestTraderSettingsMessage</a>
-                </li>
-              
-                <li>
                   <a href="#digitex_wire.ContractClosedMessage"><span class="badge">M</span>ContractClosedMessage</a>
                 </li>
               
                 <li>
                   <a href="#digitex_wire.ContractTransferredMessage"><span class="badge">M</span>ContractTransferredMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.ControlMessage"><span class="badge">M</span>ControlMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.ControlResultMessage"><span class="badge">M</span>ControlResultMessage</a>
                 </li>
               
                 <li>
@@ -259,19 +247,7 @@
                 </li>
               
                 <li>
-                  <a href="#digitex_wire.ExchangeRateUpdateMessage"><span class="badge">M</span>ExchangeRateUpdateMessage</a>
-                </li>
-              
-                <li>
                   <a href="#digitex_wire.ExchangeRatesMessage"><span class="badge">M</span>ExchangeRatesMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.ExchangeRatesUpdateMessage"><span class="badge">M</span>ExchangeRatesUpdateMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.FinishRunMessage"><span class="badge">M</span>FinishRunMessage</a>
                 </li>
               
                 <li>
@@ -296,10 +272,6 @@
               
                 <li>
                   <a href="#digitex_wire.GetTraderStatusMessage"><span class="badge">M</span>GetTraderStatusMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.InternalMarketStateUpdateMessage"><span class="badge">M</span>InternalMarketStateUpdateMessage</a>
                 </li>
               
                 <li>
@@ -395,18 +367,6 @@
                 </li>
               
                 <li>
-                  <a href="#digitex_wire.RunFinishedMessage"><span class="badge">M</span>RunFinishedMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.RunStartedMessage"><span class="badge">M</span>RunStartedMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.StartRunMessage"><span class="badge">M</span>StartRunMessage</a>
-                </li>
-              
-                <li>
                   <a href="#digitex_wire.SubscribeMessage"><span class="badge">M</span>SubscribeMessage</a>
                 </li>
               
@@ -435,19 +395,11 @@
                 </li>
               
                 <li>
-                  <a href="#digitex_wire.TraderSettingsMessage"><span class="badge">M</span>TraderSettingsMessage</a>
-                </li>
-              
-                <li>
                   <a href="#digitex_wire.TraderStatusMessage"><span class="badge">M</span>TraderStatusMessage</a>
                 </li>
               
                 <li>
                   <a href="#digitex_wire.UpdateAllContractsMessage"><span class="badge">M</span>UpdateAllContractsMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.UpdateContestTraderSettingsMessage"><span class="badge">M</span>UpdateContestTraderSettingsMessage</a>
                 </li>
               
                 <li>
@@ -460,14 +412,6 @@
               
                 <li>
                   <a href="#digitex_wire.UpdateOrderMessage"><span class="badge">M</span>UpdateOrderMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.UpdateTraderBalanceMessage"><span class="badge">M</span>UpdateTraderBalanceMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.UpdateTraderSettingsMessage"><span class="badge">M</span>UpdateTraderSettingsMessage</a>
                 </li>
               
               
@@ -531,7 +475,7 @@
     
       
       <div class="file-heading">
-        <h2 id="trading_api.proto">trading_api.proto</h2><a href="#title">Top</a>
+        <h2 id="messages_public.proto">messages_public.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
@@ -701,13 +645,6 @@
                   <td><p>Contract Price </p></td>
                 </tr>
               
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -751,44 +688,6 @@
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
                   <td><p>Defines how much of a contract should be closed </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.ContestTraderSettingsMessage">ContestTraderSettingsMessage</h3>
-        <p>DEPRECATED</p><p>from engine</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>max_leverage</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_position</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -860,189 +759,6 @@
 
         
       
-        <h3 id="digitex_wire.ControlMessage">ControlMessage</h3>
-        <p>System message, TBU</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>control_command</td>
-                  <td><a href="#digitex_wire.ControlCommand">ControlCommand</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>other_trader_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_rate</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Funding rate indicates which positions should pay to traders with the opposite positions at the Funding event </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_trade_price</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Last Trade Price (LTP) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_code</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_type</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_uint64</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>generic values
-
-Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_int64</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_decimal</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_double</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_string</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_bytes</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.ControlResultMessage">ControlResultMessage</h3>
-        <p>System message, TBU</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>control_command</td>
-                  <td><a href="#digitex_wire.ControlCommand">ControlCommand</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_code</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_type</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_uint64</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_int64</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_decimal</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_double</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_string</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value_bytes</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>Generic value </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.DailyStatisticsMessage">DailyStatisticsMessage</h3>
         <p>Defines info of the appropriate market by the last 24 hours</p>
 
@@ -1096,7 +812,7 @@ Generic value </p></td>
         
       
         <h3 id="digitex_wire.Decimal">Decimal</h3>
-        <p>Defines the numbers type used for transferring to Protobuf</p>
+        <p></p>
 
         
           <table class="field-table">
@@ -1412,7 +1128,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
         
       
         <h3 id="digitex_wire.ErrorMessage">ErrorMessage</h3>
-        <p>Defines the error code</p><p>minimal message to return the error code</p>
+        <p>minimal message to return the error code</p>
 
         
 
@@ -1529,65 +1245,6 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
 
         
       
-        <h3 id="digitex_wire.ExchangeRateUpdateMessage">ExchangeRateUpdateMessage</h3>
-        <p>System message, indicates exchange rates on other trades for the particular currency pair</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>currency_pair_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Currency pair id </p></td>
-                </tr>
-              
-                <tr>
-                  <td>volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Quantity under the new base price </p></td>
-                </tr>
-              
-                <tr>
-                  <td>quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Quantity under the new quote price </p></td>
-                </tr>
-              
-                <tr>
-                  <td>unreliable</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>Flag indicates source (external market) credibility </p></td>
-                </tr>
-              
-                <tr>
-                  <td>source_count</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>The amount of sources (external markets) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>price_updater_id</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>ID of price updater (for now we have only one own price updater) </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.ExchangeRatesMessage">ExchangeRatesMessage</h3>
         <p>Defines the info regarding rate of all currency pairs exchange, response to GetExchangeRatesMessage</p>
 
@@ -1609,44 +1266,6 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
           </table>
 
           
-
-        
-      
-        <h3 id="digitex_wire.ExchangeRatesUpdateMessage">ExchangeRatesUpdateMessage</h3>
-        <p>System message, indicates exchange rates on other trades</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>rates</td>
-                  <td><a href="#digitex_wire.ExchangeRatesUpdateMessage">ExchangeRatesUpdateMessage</a></td>
-                  <td>repeated</td>
-                  <td><p>Array of exchange rates on other trades </p></td>
-                </tr>
-              
-                <tr>
-                  <td>price_updater_id</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>ID of price updater (for now we have only one own price updater) </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.FinishRunMessage">FinishRunMessage</h3>
-        <p>DEPRECATED</p><p>to engine</p>
-
-        
 
         
       
@@ -1950,583 +1569,6 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
         <p>Trader Status Request in order ot receive TraderStatusMessage</p>
 
         
-
-        
-      
-        <h3 id="digitex_wire.InternalMarketStateUpdateMessage">InternalMarketStateUpdateMessage</h3>
-        <p>System message, TBU</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>event_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>market_name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>health</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>ohlcvs</td>
-                  <td><a href="#digitex_wire.OHLCVMessage">OHLCVMessage</a></td>
-                  <td>repeated</td>
-                  <td><p>Array of the time frame lengths </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_trade_price</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Last Trade Price (LTP) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_trade_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Last Trade Quantity (on the ladder or Recent Trades (Amount column)) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_trade_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Time of the last Trade </p></td>
-                </tr>
-              
-                <tr>
-                  <td>daily_stats</td>
-                  <td><a href="#digitex_wire.DailyStatisticsMessage">DailyStatisticsMessage</a></td>
-                  <td>repeated</td>
-                  <td><p>Array of Market states, includes info the last and current day </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_time</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Remaining time until the next funding event </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_rate</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Funding rate indicates which positions should pay to traders with the opposite positions at the Funding event </p></td>
-                </tr>
-              
-                <tr>
-                  <td>next_funding_rate</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Funding rate for the next period </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_interval</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Funding period indicates how often Funding event happen (every 8 hours for now) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>spot_price</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Spot Price </p></td>
-                </tr>
-              
-                <tr>
-                  <td>payout_per_contract</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Payout per Contract </p></td>
-                </tr>
-              
-                <tr>
-                  <td>next_payout_per_contract</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>alert_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>alert_text</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>engine_start_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trading_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>withdrawals_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>closed</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>operations_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidations_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>check_engine</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>min_allowed_spot_price</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_allowed_spot_price</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_buy_order_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_sell_order_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_buy_order_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_sell_order_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_buy_order_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_sell_order_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_trader_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_long_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_short_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_long_entry_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_short_entry_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_long_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_short_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_long_funding_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_short_funding_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_long_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_short_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader1_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader2_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader1_entry_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader2_entry_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader1_funding_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader2_funding_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_trader_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total_balance</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader1_balance</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader2_balance</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>balance_trader_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>profit_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>loss_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_funding_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_margin_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>in_messages_last_min</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_messages_last_min</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>near_liquidation_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>near_liquidation_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>near_liquidation_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>insurance_fund_loss_ratio</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>active_trader_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>active_trader_count_last_5m</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>active_trader_count_last_1h</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>active_trader_count_last_1d</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidity_reward_enabled</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidity_reward_per_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
 
         
       
@@ -3203,27 +2245,6 @@ Used for average computation ? </p></td>
                   <td><p> </p></td>
                 </tr>
               
-                <tr>
-                  <td>trading_suspended</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>next_resume_time</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>next_suspend_time</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -3232,7 +2253,7 @@ Used for average computation ? </p></td>
         
       
         <h3 id="digitex_wire.MarketTraderStatisticsMessage">MarketTraderStatisticsMessage</h3>
-        <p></p>
+        <p>Trader statistics</p>
 
         
           <table class="field-table">
@@ -3784,20 +2805,6 @@ Used for average computation ? </p></td>
                 </tr>
               
                 <tr>
-                  <td>exchange_rate_update_msg</td>
-                  <td><a href="#digitex_wire.ExchangeRateUpdateMessage">ExchangeRateUpdateMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader_balance_update_msg</td>
-                  <td><a href="#digitex_wire.TraderBalanceUpdateMessage">TraderBalanceUpdateMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>trader_balance_msg</td>
                   <td><a href="#digitex_wire.TraderBalanceMessage">TraderBalanceMessage</a></td>
                   <td></td>
@@ -3882,13 +2889,6 @@ Used for average computation ? </p></td>
                 </tr>
               
                 <tr>
-                  <td>control_msg</td>
-                  <td><a href="#digitex_wire.ControlMessage">ControlMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>funding_msg</td>
                   <td><a href="#digitex_wire.FundingMessage">FundingMessage</a></td>
                   <td></td>
@@ -3952,29 +2952,8 @@ Used for average computation ? </p></td>
                 </tr>
               
                 <tr>
-                  <td>update_trader_settings_msg</td>
-                  <td><a href="#digitex_wire.UpdateTraderSettingsMessage">UpdateTraderSettingsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader_settings_msg</td>
-                  <td><a href="#digitex_wire.TraderSettingsMessage">TraderSettingsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>order_canceled_msg</td>
                   <td><a href="#digitex_wire.OrderCanceledMessage">OrderCanceledMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>engine_status_msg</td>
-                  <td><a href="#digitex_wire.EngineStatusMessage">EngineStatusMessage</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -4029,55 +3008,6 @@ Used for average computation ? </p></td>
                 </tr>
               
                 <tr>
-                  <td>start_run_msg</td>
-                  <td><a href="#digitex_wire.StartRunMessage">StartRunMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_started_msg</td>
-                  <td><a href="#digitex_wire.RunStartedMessage">RunStartedMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>finish_run_msg</td>
-                  <td><a href="#digitex_wire.FinishRunMessage">FinishRunMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_finished_msg</td>
-                  <td><a href="#digitex_wire.RunFinishedMessage">RunFinishedMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>update_contest_trader_settings_msg</td>
-                  <td><a href="#digitex_wire.UpdateContestTraderSettingsMessage">UpdateContestTraderSettingsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>contest_trader_settings_msg</td>
-                  <td><a href="#digitex_wire.ContestTraderSettingsMessage">ContestTraderSettingsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>control_result_msg</td>
-                  <td><a href="#digitex_wire.ControlResultMessage">ControlResultMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>get_trader_balance_msg</td>
                   <td><a href="#digitex_wire.GetTraderBalanceMessage">GetTraderBalanceMessage</a></td>
                   <td></td>
@@ -4085,22 +3015,8 @@ Used for average computation ? </p></td>
                 </tr>
               
                 <tr>
-                  <td>update_trader_balance_msg</td>
-                  <td><a href="#digitex_wire.UpdateTraderBalanceMessage">UpdateTraderBalanceMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>trader_balance_updated_msg</td>
                   <td><a href="#digitex_wire.TraderBalanceUpdatedMessage">TraderBalanceUpdatedMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>internal_market_state_update_msg</td>
-                  <td><a href="#digitex_wire.InternalMarketStateUpdateMessage">InternalMarketStateUpdateMessage</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -4157,13 +3073,6 @@ Used for average computation ? </p></td>
                 <tr>
                   <td>market_trader_statistics_msg</td>
                   <td><a href="#digitex_wire.MarketTraderStatisticsMessage">MarketTraderStatisticsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>exchange_rates_update_msg</td>
-                  <td><a href="#digitex_wire.ExchangeRatesUpdateMessage">ExchangeRatesUpdateMessage</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -4317,13 +3226,6 @@ Used for average computation ? </p></td>
                   <td><p>Not used, defines time when Order was placed to the Order Book </p></td>
                 </tr>
               
-                <tr>
-                  <td>trade_id</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -4426,13 +3328,6 @@ Used for average computation ? </p></td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p>Not used, defines time when Order was placed to the Order Book </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_id</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
                 </tr>
               
                 <tr>
@@ -4974,13 +3869,6 @@ Array of the Canceled Orders </p></td>
                 </tr>
               
                 <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
-                </tr>
-              
-                <tr>
                   <td>trades</td>
                   <td><a href="#digitex_wire.TradeMessage">TradeMessage</a></td>
                   <td>repeated</td>
@@ -5142,13 +4030,6 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
                   <td><p>from v129: the auto-generated order_id of the first order in chain </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -5427,13 +4308,6 @@ Array of the Canceled Orders </p></td>
                   <td><p>from v129: the auto-generated order_id of the first order in chain </p></td>
                 </tr>
               
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -5473,7 +4347,7 @@ Array of the Canceled Orders </p></td>
         
       
         <h3 id="digitex_wire.PlaceOrderMessage">PlaceOrderMessage</h3>
-        <p>Defines the order properties during order placement</p>
+        <p>Defines the numbers type used for transferring to Protobuf</p>
 
         
           <table class="field-table">
@@ -5529,13 +4403,6 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p>Reduce Only flag </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -5621,22 +4488,6 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td><a href="#digitex_wire.OrderMessage">OrderMessage</a></td>
                   <td>repeated</td>
                   <td><p>liquidated orders </p></td>
-                </tr>
-              
-                <tr>
-                  <td>stop_loss_contracts</td>
-                  <td><a href="#digitex_wire.OrderMessage">OrderMessage</a></td>
-                  <td>repeated</td>
-                  <td><p>the order parameters are reported
-
-Not used, deprecated </p></td>
-                </tr>
-              
-                <tr>
-                  <td>take_profit_contracts</td>
-                  <td><a href="#digitex_wire.OrderMessage">OrderMessage</a></td>
-                  <td>repeated</td>
-                  <td><p>Not used, deprecated </p></td>
                 </tr>
               
                 <tr>
@@ -5812,225 +4663,6 @@ Not used, deprecated </p></td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
                   <td><p>Mark Price round up to the size chart </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.RunFinishedMessage">RunFinishedMessage</h3>
-        <p>DEPRECATED</p><p>from engine</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>orig_trader_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>tournament_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>start_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>finish_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>pnl</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Current profit and loss </p></td>
-                </tr>
-              
-                <tr>
-                  <td>accum_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>The amount of orders placed by a trader for the last 8 hours (period between funding events) </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.RunStartedMessage">RunStartedMessage</h3>
-        <p>DEPRECATED</p><p>from engine</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>new_trader_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>tournament_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>start_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_duration</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.StartRunMessage">StartRunMessage</h3>
-        <p>DEPRECATED</p><p>to engine</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>new_trader_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>mandatory, must not be used before </p></td>
-                </tr>
-              
-                <tr>
-                  <td>start_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>optional, the engine sets the start_timestamp to the current time </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_duration</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>mandatory, microseconds </p></td>
-                </tr>
-              
-                <tr>
-                  <td>run_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>optional, saved by the engine </p></td>
-                </tr>
-              
-                <tr>
-                  <td>tournament_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>optional, saved by the engine </p></td>
-                </tr>
-              
-                <tr>
-                  <td>initial_balance</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>mandatory </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_leverage</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>optional, the default value (100) if not specified </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_position</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>optional, the default value if not specified </p></td>
-                </tr>
-              
-                <tr>
-                  <td>enable_transfer</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>optional, false by default, which blocks transfers to/from trading account </p></td>
-                </tr>
-              
-                <tr>
-                  <td>enable_main_trading</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>optional, false by default, which disables switching to/from the main trader_id </p></td>
-                </tr>
-              
-                <tr>
-                  <td>rate_limit_sec</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>optional, Quantity of messages a user can send per a second </p></td>
-                </tr>
-              
-                <tr>
-                  <td>leverage</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>optional, the initial leverage </p></td>
                 </tr>
               
             </tbody>
@@ -6607,30 +5239,6 @@ Not used, deprecated </p></td>
 
         
       
-        <h3 id="digitex_wire.TraderSettingsMessage">TraderSettingsMessage</h3>
-        <p>System message</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>rate_limit_sec</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>Quantity of messages a user can send per a second </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.TraderStatusMessage">TraderStatusMessage</h3>
         <p>Defines Trader Status info, response to GetTraderStatusMessage, UpdateContractMessage, UpdateAllContractsMessage?</p>
 
@@ -6868,44 +5476,6 @@ Not used, deprecated </p></td>
 
         
       
-        <h3 id="digitex_wire.UpdateContestTraderSettingsMessage">UpdateContestTraderSettingsMessage</h3>
-        <p>DEPRECATED</p><p>to engine</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>update_mask</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_leverage_increment</td>
-                  <td><a href="#sint32">sint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_position_increment</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.UpdateContractMessage">UpdateContractMessage</h3>
         <p>Request to update the particular Contract </p><p>/* the engine replies with TraderStatusMessage */</p>
 
@@ -7025,89 +5595,6 @@ Not used, deprecated </p></td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
                   <td><p>Quantity of contracts </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_flags</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.UpdateTraderBalanceMessage">UpdateTraderBalanceMessage</h3>
-        <p>Request to engine in order to update Trader Balance (System message)</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>currency_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Currancy ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>increment</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Trader’s balance increasing in currency_id </p></td>
-                </tr>
-              
-                <tr>
-                  <td>seed</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>signature</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>Signature from /user/sign_request </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.UpdateTraderSettingsMessage">UpdateTraderSettingsMessage</h3>
-        <p>System message</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>update_mask</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>rate_limit_sec_increment</td>
-                  <td><a href="#sint32">sint32</a></td>
-                  <td></td>
-                  <td><p>Changes in quantity of messages a user can send per a second </p></td>
                 </tr>
               
             </tbody>
@@ -7301,12 +5788,6 @@ Not used, deprecated </p></td>
                 <td><p></p></td>
               </tr>
             
-              <tr>
-                <td>CLEAR_LAST_TRADE</td>
-                <td>29</td>
-                <td><p></p></td>
-              </tr>
-            
           </tbody>
         </table>
       
@@ -7477,18 +5958,6 @@ Not used, deprecated </p></td>
               </tr>
             
               <tr>
-                <td>EXCHANGE_RATE_UPDATE</td>
-                <td>520</td>
-                <td><p>Exchange rate request (Service message)</p></td>
-              </tr>
-            
-              <tr>
-                <td>TRADER_BALANCE_UPDATE</td>
-                <td>521</td>
-                <td><p>User balance request (for trading (NOT main balance)) - Service message</p></td>
-              </tr>
-            
-              <tr>
                 <td>TRADER_BALANCE</td>
                 <td>522</td>
                 <td><p>Trading balance information (TRADER_BALANCE_UPDATE message response)</p></td>
@@ -7561,12 +6030,6 @@ Not used, deprecated </p></td>
               </tr>
             
               <tr>
-                <td>CONTROL</td>
-                <td>534</td>
-                <td><p>ControlCommand Service message</p></td>
-              </tr>
-            
-              <tr>
                 <td>FUNDING</td>
                 <td>535</td>
                 <td><p>Funding information message (when Funding happened)</p></td>
@@ -7621,27 +6084,9 @@ Not used, deprecated </p></td>
               </tr>
             
               <tr>
-                <td>UPDATE_TRADER_SETTINGS</td>
-                <td>544</td>
-                <td><p>Update user preferences - Service message</p></td>
-              </tr>
-            
-              <tr>
-                <td>TRADER_SETTINGS</td>
-                <td>545</td>
-                <td><p>Information on settings for a trader - Service message (UPDATE_TRADER_SETTINGS message response)</p></td>
-              </tr>
-            
-              <tr>
                 <td>ORDER_CANCELED</td>
                 <td>546</td>
                 <td><p>Specific order cancelation (CANCEL_ORDER &amp; CANCEL_ALL_ORDERS message response)</p></td>
-              </tr>
-            
-              <tr>
-                <td>ENGINE_STATUS</td>
-                <td>547</td>
-                <td><p>Engine status</p></td>
               </tr>
             
               <tr>
@@ -7687,69 +6132,15 @@ Not used, deprecated </p></td>
               </tr>
             
               <tr>
-                <td>START_RUN</td>
-                <td>555</td>
-                <td><p>DEPRECATED</p></td>
-              </tr>
-            
-              <tr>
-                <td>RUN_STARTED</td>
-                <td>556</td>
-                <td><p>DEPRECATED</p></td>
-              </tr>
-            
-              <tr>
-                <td>FINISH_RUN</td>
-                <td>557</td>
-                <td><p>DEPRECATED</p></td>
-              </tr>
-            
-              <tr>
-                <td>RUN_FINISHED</td>
-                <td>558</td>
-                <td><p>DEPRECATED</p></td>
-              </tr>
-            
-              <tr>
-                <td>UPDATE_CONTEST_TRADER_SETTINGS</td>
-                <td>559</td>
-                <td><p>DEPRECATED (Service message)</p></td>
-              </tr>
-            
-              <tr>
-                <td>CONTEST_TRADER_SETTINGS</td>
-                <td>560</td>
-                <td><p>DEPRECATED (Service message)</p></td>
-              </tr>
-            
-              <tr>
-                <td>CONTROL_RESULT</td>
-                <td>561</td>
-                <td><p>ControlCommand Service message response (CONTROL message response)</p></td>
-              </tr>
-            
-              <tr>
                 <td>GET_TRADER_BALANCE</td>
                 <td>562</td>
                 <td><p>Trader Balance request</p></td>
               </tr>
             
               <tr>
-                <td>UPDATE_TRADER_BALANCE</td>
-                <td>563</td>
-                <td><p>the same as TRADER_BALANCE_UPDATE - it is better to delete</p></td>
-              </tr>
-            
-              <tr>
                 <td>TRADER_BALANCE_UPDATED</td>
                 <td>564</td>
                 <td><p>Updated information about Trader Balance (UPDATE_TRADER_BALANCE message response)</p></td>
-              </tr>
-            
-              <tr>
-                <td>INTERNAL_MARKET_STATE_UPDATE</td>
-                <td>565</td>
-                <td><p>Updated information about the internal market state - Service message</p></td>
               </tr>
             
               <tr>
@@ -7800,12 +6191,6 @@ Not used, deprecated </p></td>
                 <td><p>Market trader statistics</p></td>
               </tr>
             
-              <tr>
-                <td>EXCHANGE_RATES_UPDATE</td>
-                <td>574</td>
-                <td><p>Update information on rates - Service message</p></td>
-              </tr>
-            
           </tbody>
         </table>
       
@@ -7826,31 +6211,31 @@ Not used, deprecated </p></td>
               <tr>
                 <td>GFD</td>
                 <td>1</td>
-                <td><p>Good for the day - orders are canceled automatically at 00:00:00 UTC of the next day.</p></td>
+                <td><p>good for the day</p></td>
               </tr>
             
               <tr>
                 <td>GTC</td>
                 <td>2</td>
-                <td><p>Good till cancelled - orders are remained active until it is either executed or until the trader cancels it.</p></td>
+                <td><p>good till cancel</p></td>
               </tr>
             
               <tr>
                 <td>GTF</td>
                 <td>3</td>
-                <td><p>Good till funding - orders are canceled automatically at the next funding (i.e 00:00:00, 08:00:00, 16:00:00 UTC).</p></td>
+                <td><p>good till funding</p></td>
               </tr>
             
               <tr>
                 <td>IOC</td>
                 <td>4</td>
-                <td><p>Immediate or cancel - orders are executed immediately. If the order cannot be partially filled, it is canceled. If the order cannot be fully filled, the remainder is canceled.</p></td>
+                <td><p>immediate or cancel</p></td>
               </tr>
             
               <tr>
                 <td>FOK</td>
                 <td>5</td>
-                <td><p>Fill or kill - orders are executed immediately. If the order cannot be fully filled immediately, it is canceled.</p></td>
+                <td><p>fill or kill</p></td>
               </tr>
             
           </tbody>
