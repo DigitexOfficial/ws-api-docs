@@ -30,5 +30,10 @@ Direct links to the account page:
 
 If you have already created your token, you can simply copy it, else click on "Create" in the API section of your account.
 
-You can then use it in the header for authorization.
+You can then use it in the header for authorization using:
+
+```
+{"Athorization": "Token YOUR-TOKEN-HERE"}
+```
+
 
