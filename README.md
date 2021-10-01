@@ -1,1 +1,1 @@
-# ws-api-docs
+# Digitex Websockets API documentation
