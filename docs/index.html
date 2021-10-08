@@ -175,7 +175,7 @@
         
           
           <li>
-            <a href="#messages_public.proto">messages_public.proto</a>
+            <a href="#protos%2fmessages.proto">protos/messages.proto</a>
             <ul>
               
                 <li>
@@ -228,10 +228,6 @@
               
                 <li>
                   <a href="#digitex_wire.DelayedActionStatusMessage"><span class="badge">M</span>DelayedActionStatusMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.EngineStatusMessage"><span class="badge">M</span>EngineStatusMessage</a>
                 </li>
               
                 <li>
@@ -292,10 +288,6 @@
               
                 <li>
                   <a href="#digitex_wire.MarketStateUpdateMessage"><span class="badge">M</span>MarketStateUpdateMessage</a>
-                </li>
-              
-                <li>
-                  <a href="#digitex_wire.MarketTraderStatisticsMessage"><span class="badge">M</span>MarketTraderStatisticsMessage</a>
                 </li>
               
                 <li>
@@ -387,10 +379,6 @@
                 </li>
               
                 <li>
-                  <a href="#digitex_wire.TraderBalanceUpdateMessage"><span class="badge">M</span>TraderBalanceUpdateMessage</a>
-                </li>
-              
-                <li>
                   <a href="#digitex_wire.TraderBalanceUpdatedMessage"><span class="badge">M</span>TraderBalanceUpdatedMessage</a>
                 </li>
               
@@ -414,10 +402,6 @@
                   <a href="#digitex_wire.UpdateOrderMessage"><span class="badge">M</span>UpdateOrderMessage</a>
                 </li>
               
-              
-                <li>
-                  <a href="#digitex_wire.ControlCommand"><span class="badge">E</span>ControlCommand</a>
-                </li>
               
                 <li>
                   <a href="#digitex_wire.DelayedActionType"><span class="badge">E</span>DelayedActionType</a>
@@ -475,13 +459,13 @@
     
       
       <div class="file-heading">
-        <h2 id="messages_public.proto">messages_public.proto</h2><a href="#title">Top</a>
+        <h2 id="protos/messages.proto">protos/messages.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
       
         <h3 id="digitex_wire.CancelAllOrdersMessage">CancelAllOrdersMessage</h3>
-        <p>Defines the order properties during all orders cancelation</p>
+        <p>Defines the order properties during all orders cancellation</p>
 
         
           <table class="field-table">
@@ -525,7 +509,7 @@
                   <td>prev_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Order id is going to be cancelled </p></td>
+                  <td><p>Order id is going to be updated </p></td>
                 </tr>
               
                 <tr>
@@ -543,7 +527,7 @@
         
       
         <h3 id="digitex_wire.CancelOrderMessage">CancelOrderMessage</h3>
-        <p>Defines the order properties during order cancelation</p>
+        <p>Defines the order properties during order cancellation</p>
 
         
           <table class="field-table">
@@ -556,7 +540,7 @@
                   <td>prev_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Order id is going to be cancelled </p></td>
+                  <td><p>Order id is going to be updated </p></td>
                 </tr>
               
             </tbody>
@@ -580,7 +564,7 @@
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Leverage size </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
             </tbody>
@@ -604,7 +588,7 @@
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Leverage size </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
                 <tr>
@@ -642,7 +626,14 @@
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Contract Price </p></td>
+                  <td><p>Order price </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -653,7 +644,7 @@
         
       
         <h3 id="digitex_wire.CloseContractMessage">CloseContractMessage</h3>
-        <p>Request to close the particulat Contract</p>
+        <p>Request to close the particular Contract</p>
 
         
           <table class="field-table">
@@ -666,7 +657,7 @@
                   <td>contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Contract ID is going to be closed </p></td>
+                  <td><p>Contract ID is going to be changed </p></td>
                 </tr>
               
                 <tr>
@@ -680,14 +671,21 @@
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Contract Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
                   <td>quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Defines how much of a contract should be closed </p></td>
+                  <td><p>Quantity of the Order </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -711,7 +709,7 @@
                   <td>order_ids</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td>repeated</td>
-                  <td><p>Array of Order IDs </p></td>
+                  <td><p>Array of ID of canceled Orders </p></td>
                 </tr>
               
             </tbody>
@@ -722,7 +720,7 @@
         
       
         <h3 id="digitex_wire.ContractTransferredMessage">ContractTransferredMessage</h3>
-        <p>Defines the new system user who owned the Contract during liqudation (System message)</p>
+        <p>Defines the new system user who owned the Contract during liquidation (System message)</p>
 
         
           <table class="field-table">
@@ -735,7 +733,7 @@
                   <td>old_contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>ID of the previous contract in contracts chain </p></td>
+                  <td><p>ID of the closed Contract </p></td>
                 </tr>
               
                 <tr>
@@ -749,7 +747,7 @@
                   <td>new_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Order ID of the new Order </p></td>
+                  <td><p>Order ID of the new Order (for instance, when Order was partially matched) </p></td>
                 </tr>
               
             </tbody>
@@ -780,7 +778,7 @@
                   <td>volume</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of trades quantity: measured in the quantity of Contracts on Futures markets and in the ammount of currency on Spot markets </p></td>
+                  <td><p>Sum of trades quantity: measured in the quantity of Contracts on Futures markets and in the amount of currency on Spot markets </p></td>
                 </tr>
               
                 <tr>
@@ -812,7 +810,7 @@
         
       
         <h3 id="digitex_wire.Decimal">Decimal</h3>
-        <p></p>
+        <p>Defines the numbers type used for transferring to Protobuf</p>
 
         
           <table class="field-table">
@@ -970,165 +968,8 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
 
         
       
-        <h3 id="digitex_wire.EngineStatusMessage">EngineStatusMessage</h3>
-        <p>System message, TBU</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>market_name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>market_description</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_interval</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Funding period indicates how often Funding event happen (every 8 hours for now) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>alert_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>alert_text</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>engine_start_timestamp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trading_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>withdrawals_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>closed</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>operations_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidations_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>deposits_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>insurance_fund_loss_ratio</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>soft_max_leverage</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>hard_max_leverage</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_loss</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_position</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_increase_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_decrease_suspended</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.ErrorMessage">ErrorMessage</h3>
-        <p>minimal message to return the error code</p>
+        <p>minimal message to return the error code</p><p>Defines the error code</p>
 
         
 
@@ -1148,7 +989,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>currency_pair_id</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Currency pair ID </p></td>
+                  <td><p>Currency pair id </p></td>
                 </tr>
               
                 <tr>
@@ -1169,7 +1010,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>buy_price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>recommended buy price, for DGTX/BTC it is the price of byuing back DGTX to the treasury </p></td>
+                  <td><p>recommended buy price, for DGTX/BTC it is the price of buying back DGTX to the treasury </p></td>
                 </tr>
               
                 <tr>
@@ -1228,7 +1069,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>buy_price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>recommended buy price, for DGTX/BTC it is the price of byuing back DGTX to the treasury </p></td>
+                  <td><p>recommended buy price, for DGTX/BTC it is the price of buying back DGTX to the treasury </p></td>
                 </tr>
               
                 <tr>
@@ -1412,14 +1253,14 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -1482,7 +1323,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -1555,7 +1396,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>currency_id</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Currancy ID </p></td>
+                  <td><p>Currency ID </p></td>
                 </tr>
               
             </tbody>
@@ -1586,7 +1427,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Trader leverage size </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
                 <tr>
@@ -1607,7 +1448,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>trader_balance</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Balance on the trading account (Bal) </p></td>
+                  <td><p>Balance of the trading account (Bal) </p></td>
                 </tr>
               
                 <tr>
@@ -1684,14 +1525,14 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -1726,7 +1567,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -1945,21 +1786,21 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
                   <td>alert_timestamp</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Defines time when the alert should be shown to a user (not used) </p></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>alert_text</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Defines text alert (not used) </p></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>open_interest</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Number of all existing futures contracts in the market at the moment </p></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
@@ -1977,7 +1818,7 @@ Protobuf does not support 256-bit values natively, this is ULEB128 value. Used o
         
       
         <h3 id="digitex_wire.MarketStateUpdateMessage">MarketStateUpdateMessage</h3>
-        <p>Recieved info regarding Market State changes</p>
+        <p>Received info regarding Market State changes</p>
 
         
           <table class="field-table">
@@ -2245,425 +2086,23 @@ Used for average computation ? </p></td>
                   <td><p> </p></td>
                 </tr>
               
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="digitex_wire.MarketTraderStatisticsMessage">MarketTraderStatisticsMessage</h3>
-        <p>Trader statistics</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
+                <tr>
+                  <td>trading_suspended</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
               
                 <tr>
-                  <td>event_timestamp</td>
+                  <td>next_resume_time</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Time of receiving the market state, in other words event (one per minute) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_order_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of quantity under all Buy Orders </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_order_quantity</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_order_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Amount of all Buy Orders per particular market </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_order_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Amount of all Sell Orders per particular market </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_order_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>sell_order_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_order_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_order_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_type</td>
-                  <td><a href="#digitex_wire.OrderPosition">OrderPosition</a></td>
-                  <td></td>
-                  <td><p>Position of open Contracts </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_contracts</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of Quantity under all Contracts </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of (Entry Price * Quantity) under all Contracts </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_liquidation_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of (Liquidation Price * Quantity) under all Contracts (0.5 of margin) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_bankruptcy_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Sum of (Bankruptcy Price * Quantity) under all Contracts (full margin) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_funding_paid_volume</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_margin</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Position margin </p></td>
-                </tr>
-              
-                <tr>
-                  <td>position_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader_balance</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Balance of the trading account (Bal) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trader_balance_2</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>For spot market, balance in base currency </p></td>
-                </tr>
-              
-                <tr>
-                  <td>maker_trade_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>maker_trade_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>maker_trade_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>maker_trade_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>taker_trade_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>taker_trade_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>taker_trade_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>taker_trade_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>profit_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>profit_2_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>loss_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>loss_2_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>funding_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>deposit_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>The amount of money the user has deposited in a last minute </p></td>
-                </tr>
-              
-                <tr>
-                  <td>deposit_2_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>The amount of money the user has deposited in last 2 minutes </p></td>
-                </tr>
-              
-                <tr>
-                  <td>withdrawal_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>The amount of money the user has withdrawn in a last minute </p></td>
-                </tr>
-              
-                <tr>
-                  <td>withdrawal_2_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>The amount of money the user has withdrawn in last 2 minutes </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_funding_paid_volume_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>liquidation_margin_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>place_order_messages_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>cancel_order_messages_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>update_order_messages_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_placed_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_placed_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_cancelled_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_cancelled_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>buy_matched_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sell_matched_orders_quantity_last_min</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>delayed_count</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>triggered_delayed_count_last_min</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>in_messages_last_min</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trade_messages_last_min</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>market_market_score</td>
-                  <td><a href="#double">double</a></td>
+                  <td>next_suspend_time</td>
+                  <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2696,7 +2135,7 @@ Used for average computation ? </p></td>
                   <td>timestamp</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Unix Timestamp, exact time in milliseconds </p></td>
+                  <td><p>Unix Timestamp, exact time in milliseconds ?? </p></td>
                 </tr>
               
                 <tr>
@@ -3070,13 +2509,6 @@ Used for average computation ? </p></td>
                   <td><p>Error message </p></td>
                 </tr>
               
-                <tr>
-                  <td>market_trader_statistics_msg</td>
-                  <td><a href="#digitex_wire.MarketTraderStatisticsMessage">MarketTraderStatisticsMessage</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -3130,7 +2562,7 @@ Used for average computation ? </p></td>
         
       
         <h3 id="digitex_wire.OHLCVMessage">OHLCVMessage</h3>
-        <p>Defines the time frame length of the trading chart (e.g. for bulding the one candle)</p>
+        <p>Defines the time frame length of the trading chart (e.g. for building the one candle)</p>
 
         
           <table class="field-table">
@@ -3171,7 +2603,7 @@ Used for average computation ? </p></td>
                   <td>volume</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Quantity: measured in the quantity of Contracts on Futures markets and in the amount of currency on Spot markets </p></td>
+                  <td><p>Quantity under the new base price </p></td>
                 </tr>
               
                 <tr>
@@ -3209,21 +2641,28 @@ Used for average computation ? </p></td>
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Order Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
                   <td>quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Quantity of the Orders by the particular price </p></td>
+                  <td><p>Quantity of the Order </p></td>
                 </tr>
               
                 <tr>
                   <td>entry_timestamp</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Not used, defines time when Order was placed to the Order Book </p></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>trade_id</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -3300,7 +2739,7 @@ Used for average computation ? </p></td>
         
       
         <h3 id="digitex_wire.OrderBookTradeEntryMessage">OrderBookTradeEntryMessage</h3>
-        <p>Defines Order Book info refarding recent trades on the market</p>
+        <p>Defines Order Book info regarding recent trades on the market</p>
 
         
           <table class="field-table">
@@ -3313,28 +2752,35 @@ Used for average computation ? </p></td>
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Order Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
                   <td>quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Quantity of the Orders by the particular price </p></td>
+                  <td><p>Quantity of the Order </p></td>
                 </tr>
               
                 <tr>
                   <td>entry_timestamp</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Not used, defines time when Order was placed to the Order Book </p></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>trade_id</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>side</td>
                   <td><a href="#digitex_wire.OrderSide">OrderSide</a></td>
                   <td></td>
-                  <td><p>Taker side </p></td>
+                  <td><p>Order side </p></td>
                 </tr>
               
             </tbody>
@@ -3432,7 +2878,7 @@ Used for average computation ? </p></td>
         
       
         <h3 id="digitex_wire.OrderCanceledMessage">OrderCanceledMessage</h3>
-        <p>Defines info refarding Canceled Order, response to CancelOrderMessage</p>
+        <p>Defines info regarding Canceled Order, response to CancelOrderMessage</p>
 
         
           <table class="field-table">
@@ -3452,7 +2898,7 @@ Used for average computation ? </p></td>
                   <td>prev_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Cancelled Order ID </p></td>
+                  <td><p>Order id is going to be updated </p></td>
                 </tr>
               
                 <tr>
@@ -3470,7 +2916,7 @@ Array of ID of canceled Orders </p></td>
                   <td>repeated</td>
                   <td><p>the verbose list of canceled orders
 
-Array of the Canceled Orders </p></td>
+Array of the Orders </p></td>
                 </tr>
               
                 <tr>
@@ -3519,14 +2965,14 @@ Array of the Canceled Orders </p></td>
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -3540,7 +2986,7 @@ Array of the Canceled Orders </p></td>
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -3606,7 +3052,7 @@ Array of the Canceled Orders </p></td>
                   <td>new_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Order ID of the new Order (for instanse, when Order was partially matched) </p></td>
+                  <td><p>Order ID of the new Order (for instance, when Order was partially matched) </p></td>
                 </tr>
               
                 <tr>
@@ -3634,14 +3080,14 @@ Array of the Canceled Orders </p></td>
                   <td>duration</td>
                   <td><a href="#digitex_wire.OrderDuration">OrderDuration</a></td>
                   <td></td>
-                  <td><p>Order duration </p></td>
+                  <td><p>Order duration (e.g. GFD, GTC) </p></td>
                 </tr>
               
                 <tr>
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Order Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
@@ -3662,21 +3108,21 @@ Array of the Canceled Orders </p></td>
                   <td>orig_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
                   <td>open_time</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Time when order was placed. May be used when Orded partialy matched, open_time defines the time when the new Order was placed </p></td>
+                  <td><p>Time when order was placed. May be used when Order partially matched, open_time defines the time when the new Order was placed </p></td>
                 </tr>
               
                 <tr>
                   <td>orig_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
@@ -3690,7 +3136,7 @@ Array of the Canceled Orders </p></td>
                   <td>dropped_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, dropped_quantity defines the quantity of the matched part </p></td>
+                  <td><p>Used when Order partially matched, dropped_quantity defines the quantity of the matched part </p></td>
                 </tr>
               
                 <tr>
@@ -3809,14 +3255,14 @@ Array of the Canceled Orders </p></td>
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -3830,7 +3276,7 @@ Array of the Canceled Orders </p></td>
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -3866,6 +3312,13 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
                   <td><p>Sum of Sell Orders Margin under all markets </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
                 <tr>
@@ -3945,7 +3398,7 @@ Array of the Canceled Orders </p></td>
                   <td>duration</td>
                   <td><a href="#digitex_wire.OrderDuration">OrderDuration</a></td>
                   <td></td>
-                  <td><p>Order duration </p></td>
+                  <td><p>Order duration (e.g. GFD, GTC) </p></td>
                 </tr>
               
                 <tr>
@@ -3980,7 +3433,7 @@ Array of the Canceled Orders </p></td>
                   <td>contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Contract ID </p></td>
+                  <td><p>Contract ID is going to be changed </p></td>
                 </tr>
               
                 <tr>
@@ -3994,28 +3447,28 @@ Array of the Canceled Orders </p></td>
                   <td>orig_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
                   <td>open_time</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Time when order was placed. May be used when Orded partialy matched, open_time defines the time when the new Order was placed </p></td>
+                  <td><p>Time when order was placed. May be used when Order partially matched, open_time defines the time when the new Order was placed </p></td>
                 </tr>
               
                 <tr>
                   <td>orig_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
                   <td>is_closing</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>&#39;Reduce only&#39; flag, defines if quantity in the Order may increase </p></td>
+                  <td><p>Reduce Only flag </p></td>
                 </tr>
               
                 <tr>
@@ -4030,6 +3483,13 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
                   <td><p>from v129: the auto-generated order_id of the first order in chain </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -4214,21 +3674,21 @@ Array of the Canceled Orders </p></td>
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Order Leverage </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
                 <tr>
                   <td>duration</td>
                   <td><a href="#digitex_wire.OrderDuration">OrderDuration</a></td>
                   <td></td>
-                  <td><p>Order duration </p></td>
+                  <td><p>Order duration (e.g. GFD, GTC) </p></td>
                 </tr>
               
                 <tr>
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Order Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
@@ -4284,21 +3744,21 @@ Array of the Canceled Orders </p></td>
                   <td>orig_client_id</td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, Order id (orig_client_id) is given to the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
                   <td>open_time</td>
                   <td><a href="#int64">int64</a></td>
                   <td></td>
-                  <td><p>Time when order was placed. May be used when Orded partialy matched, open_time defines the time when the new Order was placed </p></td>
+                  <td><p>Time when order was placed. May be used when Order partially matched, open_time defines the time when the new Order was placed </p></td>
                 </tr>
               
                 <tr>
                   <td>orig_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Used when Orded partialy matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
+                  <td><p>Used when Order partially matched, orig_quantity defines the quantity of the initial Order in a chain </p></td>
                 </tr>
               
                 <tr>
@@ -4306,6 +3766,13 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#bytes">bytes</a></td>
                   <td></td>
                   <td><p>from v129: the auto-generated order_id of the first order in chain </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -4347,7 +3814,7 @@ Array of the Canceled Orders </p></td>
         
       
         <h3 id="digitex_wire.PlaceOrderMessage">PlaceOrderMessage</h3>
-        <p>Defines the numbers type used for transferring to Protobuf</p>
+        <p>Defines the order properties during order placement</p>
 
         
           <table class="field-table">
@@ -4403,6 +3870,13 @@ Array of the Canceled Orders </p></td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p>Reduce Only flag </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -4592,14 +4066,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -4620,7 +4094,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -4686,14 +4160,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>subscribe_mask</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Binary mask (e.g. 01111), each digit corresponds to a certain type of message, where 1 means that we want to receive the certain message type and 0 if we don’t want to change the subcsription (skip the appropriate message type) </p></td>
+                  <td><p>Binary mask (e.g. 01111), each digit corresponds to a certain type of message, where 1 means that we want to receive the certain message type and 0 if we don’t want to change the subscription (skip the appropriate message type) </p></td>
                 </tr>
               
                 <tr>
                   <td>unsubscribe_mask</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Binary mask (e.g. 01111), where 1 means we want to unsubscribe from the certain message type and 0 if we don’t want to change the subcsription (skip the appropriate message type) </p></td>
+                  <td><p>Binary mask (e.g. 01111), where 1 means we want to unsubscribe from the certain message type and 0 if we don’t want to change the subscription (skip the appropriate message type) </p></td>
                 </tr>
               
             </tbody>
@@ -4704,7 +4178,7 @@ DEPRECATED, see liquidated_trades </p></td>
         
       
         <h3 id="digitex_wire.SubscribeStatusMessage">SubscribeStatusMessage</h3>
-        <p>Response to SubscribeMessage</p><p>/* the engine replies with TraderStatusMessage */</p>
+        <p>Response to SubscribeMessage</p>
 
         
           <table class="field-table">
@@ -4717,7 +4191,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>subscribe_mask</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Binary mask (e.g. 01111), each digit corresponds to a certain type of message, where 1 means that we want to receive the certain message type and 0 if we don’t want to change the subcsription (skip the appropriate message type) </p></td>
+                  <td><p>Binary mask (e.g. 01111), each digit corresponds to a certain type of message, where 1 means that we want to receive the certain message type and 0 if we don’t want to change the subscription (skip the appropriate message type) </p></td>
                 </tr>
               
             </tbody>
@@ -4786,7 +4260,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Trade Price </p></td>
+                  <td><p>Order price </p></td>
                 </tr>
               
                 <tr>
@@ -4807,14 +4281,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>bankruptcy_price</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Bankruptcy Price under the appropriate Contract, idicates the price at which a trader lost full margin related to the contract </p></td>
+                  <td><p>Bankruptcy Price under the appropriate Contract, indicates the price at which a trader lost full margin related to the contract </p></td>
                 </tr>
               
                 <tr>
                   <td>quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Quantity of the last trade </p></td>
+                  <td><p>Quantity of the Order </p></td>
                 </tr>
               
                 <tr>
@@ -4828,21 +4302,21 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Trade Leverage </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
                 <tr>
                   <td>contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>Contract ID </p></td>
+                  <td><p>Contract ID is going to be changed </p></td>
                 </tr>
               
                 <tr>
                   <td>old_contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>ID of the previous contract in a contract chain </p></td>
+                  <td><p>ID of the closed Contract </p></td>
                 </tr>
               
                 <tr>
@@ -4940,7 +4414,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>orig_contract_id</td>
                   <td><a href="#uint64">uint64</a></td>
                   <td></td>
-                  <td><p>The initial Contrat ID of the chain </p></td>
+                  <td><p>The initial Contract ID of the chain </p></td>
                 </tr>
               
                 <tr>
@@ -4955,6 +4429,20 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
                   <td><p>for spot market if &#39;price * quantity&#39; has been rounded </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fee_currency_id</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fee_volume</td>
+                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -4978,7 +4466,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>currency_id</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Currancy ID </p></td>
+                  <td><p>Currency ID </p></td>
                 </tr>
               
                 <tr>
@@ -5083,14 +4571,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -5104,7 +4592,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -5135,37 +4623,6 @@ DEPRECATED, see liquidated_trades </p></td>
 
         
       
-        <h3 id="digitex_wire.TraderBalanceUpdateMessage">TraderBalanceUpdateMessage</h3>
-        <p>System message, in order to change trader balance</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>currency_id</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>Currancy ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>increment</td>
-                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
-                  <td></td>
-                  <td><p>Trader’s balance increasing in currency_id </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="digitex_wire.TraderBalanceUpdatedMessage">TraderBalanceUpdatedMessage</h3>
         <p>Defines the new trader balance, response to UpdateTraderBalanceMessage (System message)</p>
 
@@ -5180,7 +4637,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>currency_id</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Currancy ID </p></td>
+                  <td><p>Currency ID </p></td>
                 </tr>
               
                 <tr>
@@ -5274,14 +4731,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>upnl</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Trader unrealized profit and loss </p></td>
+                  <td><p>Unrealized profit and loss </p></td>
                 </tr>
               
                 <tr>
                   <td>pnl</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Trader profit and loss </p></td>
+                  <td><p>Profit and loss </p></td>
                 </tr>
               
                 <tr>
@@ -5358,14 +4815,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>buy_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Buy Order </p></td>
+                  <td><p>Margin of a buy order </p></td>
                 </tr>
               
                 <tr>
                   <td>sell_order_margin</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Margin of a Sell Order </p></td>
+                  <td><p>Margin of a Sell order </p></td>
                 </tr>
               
                 <tr>
@@ -5386,7 +4843,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Trader leverage </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
                 <tr>
@@ -5400,7 +4857,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>sell_order_quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Sum of quantity under all Sell Orders </p></td>
+                  <td><p>Quantity of contracts in the sell order </p></td>
                 </tr>
               
                 <tr>
@@ -5438,6 +4895,20 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td><p>Sum of Sell Orders Margin under all markets </p></td>
                 </tr>
               
+                <tr>
+                  <td>fee_maker_rate</td>
+                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fee_taker_rate</td>
+                  <td><a href="#digitex_wire.Decimal">Decimal</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -5446,7 +4917,7 @@ DEPRECATED, see liquidated_trades </p></td>
         
       
         <h3 id="digitex_wire.UpdateAllContractsMessage">UpdateAllContractsMessage</h3>
-        <p>Request to update all Contracts</p><p>/* the engine replies with TraderStatusMessage */</p>
+        <p>Request to update all Contracts</p>
 
         
           <table class="field-table">
@@ -5466,7 +4937,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Contract leverage </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
             </tbody>
@@ -5477,7 +4948,7 @@ DEPRECATED, see liquidated_trades </p></td>
         
       
         <h3 id="digitex_wire.UpdateContractMessage">UpdateContractMessage</h3>
-        <p>Request to update the particular Contract </p><p>/* the engine replies with TraderStatusMessage */</p>
+        <p>Request to update the particular Contract</p>
 
         
           <table class="field-table">
@@ -5497,7 +4968,7 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>leverage</td>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
-                  <td><p>Contract leverage </p></td>
+                  <td><p>Order leverage </p></td>
                 </tr>
               
             </tbody>
@@ -5594,7 +5065,14 @@ DEPRECATED, see liquidated_trades </p></td>
                   <td>quantity</td>
                   <td><a href="#digitex_wire.Decimal">Decimal</a></td>
                   <td></td>
-                  <td><p>Quantity of contracts </p></td>
+                  <td><p>Quantity of the Order </p></td>
+                </tr>
+              
+                <tr>
+                  <td>order_flags</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Not used, May be used for defining the order position in a queue </p></td>
                 </tr>
               
             </tbody>
@@ -5605,191 +5083,6 @@ DEPRECATED, see liquidated_trades </p></td>
         
       
 
-      
-        <h3 id="digitex_wire.ControlCommand">ControlCommand</h3>
-        <p>TBU</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>CONTROL_NOP</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>STOP</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>RESTART</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SUSPEND</td>
-                <td>3</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>MINUTE</td>
-                <td>4</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SUSPEND_TRADING</td>
-                <td>5</td>
-                <td><p>suspend trading, in the suspended state trading-related requests will fail</p></td>
-              </tr>
-            
-              <tr>
-                <td>RESUME_TRADING</td>
-                <td>6</td>
-                <td><p>resume trading</p></td>
-              </tr>
-            
-              <tr>
-                <td>DISABLE_FUNDING</td>
-                <td>7</td>
-                <td><p>disable funding events</p></td>
-              </tr>
-            
-              <tr>
-                <td>ENABLE_FUNDING</td>
-                <td>8</td>
-                <td><p>enable funding events</p></td>
-              </tr>
-            
-              <tr>
-                <td>FORCE_FUNDING</td>
-                <td>9</td>
-                <td><p>perform funding right now</p></td>
-              </tr>
-            
-              <tr>
-                <td>DISABLE_WITHDRAWALS</td>
-                <td>10</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ENABLE_WITHDRAWALS</td>
-                <td>11</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>BAN_TRADER</td>
-                <td>12</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UNBAN_TRADER</td>
-                <td>13</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DUMP_TRADES</td>
-                <td>14</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DUMP_ORDERS</td>
-                <td>15</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CLEAR_ORDERBOOK</td>
-                <td>16</td>
-                <td><p>clear the orderbook</p></td>
-              </tr>
-            
-              <tr>
-                <td>SETTLE_MARKET</td>
-                <td>17</td>
-                <td><p>perform the final settlement, clear the orderbook and close the market</p></td>
-              </tr>
-            
-              <tr>
-                <td>GET_STATE</td>
-                <td>18</td>
-                <td><p>request the engine state</p></td>
-              </tr>
-            
-              <tr>
-                <td>DUMP_TRADER_STATES</td>
-                <td>19</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>TICK</td>
-                <td>20</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SET_FUNDING_RATE</td>
-                <td>21</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SET_LAST_TRADE_PRICE</td>
-                <td>22</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SET_VALUE</td>
-                <td>23</td>
-                <td><p>generic request, requires value_code</p></td>
-              </tr>
-            
-              <tr>
-                <td>GET_VALUE</td>
-                <td>24</td>
-                <td><p>generic request, requires value_code</p></td>
-              </tr>
-            
-              <tr>
-                <td>HTTP_GET</td>
-                <td>25</td>
-                <td><p>generic request, requires value_code</p></td>
-              </tr>
-            
-              <tr>
-                <td>HTTP_POST</td>
-                <td>26</td>
-                <td><p>generic request, requires value_code</p></td>
-              </tr>
-            
-              <tr>
-                <td>DUMP_MARKET_TRADER_STATES</td>
-                <td>27</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>MINUTE_RANDOM_TIME</td>
-                <td>28</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
       
         <h3 id="digitex_wire.DelayedActionType">DelayedActionType</h3>
         <p>Defines the type of delayed action</p>
@@ -5837,7 +5130,7 @@ DEPRECATED, see liquidated_trades </p></td>
               <tr>
                 <td>DTC_LESS_OR_EQUAL</td>
                 <td>2</td>
-                <td><p>elayed action will place an order if Spot Price &lt;= the appropriate price</p></td>
+                <td><p>Delayed action will place an order if Spot Price &lt;= the appropriate price</p></td>
               </tr>
             
           </tbody>
@@ -5958,6 +5251,12 @@ DEPRECATED, see liquidated_trades </p></td>
               </tr>
             
               <tr>
+                <td>TRADER_BALANCE_UPDATE</td>
+                <td>521</td>
+                <td><p>User balance request (for trading (NOT main balance)) - Service message</p></td>
+              </tr>
+            
+              <tr>
                 <td>TRADER_BALANCE</td>
                 <td>522</td>
                 <td><p>Trading balance information (TRADER_BALANCE_UPDATE message response)</p></td>
@@ -6066,7 +5365,7 @@ DEPRECATED, see liquidated_trades </p></td>
               </tr>
             
               <tr>
-                <td>UPDATE_ALL_CONRACTS</td>
+                <td>UPDATE_ALL_CONTRACTS</td>
                 <td>541</td>
                 <td><p>NOT IMPLEMENTED</p></td>
               </tr>
@@ -6086,7 +5385,7 @@ DEPRECATED, see liquidated_trades </p></td>
               <tr>
                 <td>ORDER_CANCELED</td>
                 <td>546</td>
-                <td><p>Specific order cancelation (CANCEL_ORDER &amp; CANCEL_ALL_ORDERS message response)</p></td>
+                <td><p>Specific order cancellation (CANCEL_ORDER &amp; CANCEL_ALL_ORDERS message response)</p></td>
               </tr>
             
               <tr>
@@ -6185,12 +5484,6 @@ DEPRECATED, see liquidated_trades </p></td>
                 <td><p>Error information - Service message</p></td>
               </tr>
             
-              <tr>
-                <td>MARKET_TRADER_STATISTICS</td>
-                <td>573</td>
-                <td><p>Market trader statistics</p></td>
-              </tr>
-            
           </tbody>
         </table>
       
@@ -6250,7 +5543,7 @@ DEPRECATED, see liquidated_trades </p></td>
           <tbody>
             
               <tr>
-                <td>UNDEFINED</td>
+                <td>POSITION_UNDEFINED</td>
                 <td>0</td>
                 <td><p>Contract position is not defined</p></td>
               </tr>

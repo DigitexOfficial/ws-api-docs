@@ -33,7 +33,7 @@ If you have already created your token, you can simply copy it, else click on "C
 You can then use it in the header for authorization using:
 
 ```
-{"Athorization": "Token YOUR-TOKEN-HERE"}
+{"Authorization": "Token YOUR-TOKEN-HERE"}
 ```
 
 
